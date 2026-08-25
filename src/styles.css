@@ -148,3 +148,137 @@
     color: var(--color-foreground);
   }
 }
+
+/* ============================================================
+   Royal Medical Center — brand layer
+   Warm ivory canvas, deep botanical green, warm gold accent.
+   ============================================================ */
+
+:root {
+  --background: oklch(0.988 0.006 95);
+  --foreground: oklch(0.24 0.03 155);
+  --card: oklch(0.997 0.003 95);
+  --card-foreground: oklch(0.24 0.03 155);
+  --popover: oklch(0.997 0.003 95);
+  --popover-foreground: oklch(0.24 0.03 155);
+
+  --primary: oklch(0.42 0.078 163);
+  --primary-foreground: oklch(0.985 0.008 95);
+  --primary-soft: oklch(0.62 0.075 163);
+  --primary-glow: oklch(0.78 0.075 168);
+
+  --secondary: oklch(0.955 0.014 120);
+  --secondary-foreground: oklch(0.32 0.045 160);
+
+  --muted: oklch(0.958 0.01 100);
+  --muted-foreground: oklch(0.52 0.022 150);
+
+  --accent: oklch(0.74 0.115 78);
+  --accent-foreground: oklch(0.26 0.05 70);
+  --accent-deep: oklch(0.62 0.125 65);
+
+  --border: oklch(0.9 0.012 120);
+  --input: oklch(0.9 0.012 120);
+  --ring: oklch(0.62 0.075 163);
+
+  --radius: 1rem;
+
+  --glass: oklch(1 0 0 / 62%);
+  --glass-border: oklch(1 0 0 / 70%);
+
+  --gradient-accent: linear-gradient(100deg, var(--accent-deep), var(--accent));
+  --gradient-primary: linear-gradient(140deg, var(--primary), var(--primary-soft));
+  --gradient-halo: radial-gradient(
+    circle at 50% 45%,
+    color-mix(in oklab, var(--primary-glow) 45%, transparent) 0%,
+    transparent 68%
+  );
+
+  --shadow-soft: 0 1px 2px oklch(0.3 0.04 150 / 6%), 0 18px 40px -22px oklch(0.3 0.04 150 / 26%);
+  --shadow-float: 0 2px 6px oklch(0.3 0.04 150 / 6%), 0 30px 70px -30px oklch(0.3 0.04 150 / 34%);
+  --shadow-cta: 0 10px 30px -12px color-mix(in oklab, var(--primary) 55%, transparent);
+  --shadow-cta-hover: 0 18px 44px -14px color-mix(in oklab, var(--primary) 62%, transparent);
+}
+
+@theme inline {
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-glow: var(--primary-glow);
+  --color-accent-deep: var(--accent-deep);
+  --color-glass: var(--glass);
+  --color-glass-border: var(--glass-border);
+
+  --animate-breathe: breathe 11s ease-in-out infinite;
+  --animate-drift: drift 9s ease-in-out infinite;
+  --animate-orbit: orbit 60s linear infinite;
+  --animate-orbit-reverse: orbit-reverse 60s linear infinite;
+  --animate-rise: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+
+  @keyframes breathe {
+    0%,
+    100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.018);
+    }
+  }
+  @keyframes drift {
+    0%,
+    100% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(0, -10px, 0);
+    }
+  }
+  @keyframes orbit {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes orbit-reverse {
+    to {
+      transform: rotate(-360deg);
+    }
+  }
+  @keyframes rise {
+    from {
+      opacity: 0;
+      transform: translate3d(0, 22px, 0);
+    }
+    to {
+      opacity: 1;
+      transform: none;
+    }
+  }
+}
+
+@utility glass-panel {
+  background: var(--glass);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(18px) saturate(150%);
+  box-shadow: var(--shadow-float);
+}
+
+@utility text-gradient-accent {
+  background: var(--gradient-accent);
+  background-clip: text;
+  color: transparent;
+}
+
+@layer base {
+  body {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
