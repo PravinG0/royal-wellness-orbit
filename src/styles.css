@@ -4,6 +4,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@theme {
+  --font-display: "Fraunces", "Iowan Old Style", Georgia, serif;
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+}
+
+
 /*
  * Design system definition.
  *
