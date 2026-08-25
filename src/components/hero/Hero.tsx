@@ -170,7 +170,7 @@ export function Hero() {
 
             {/* floating pricing card */}
             <div
-              className="glass-panel absolute -bottom-4 left-1/2 w-[13.5rem] -translate-x-1/2 rounded-2xl px-5 py-4 text-center sm:bottom-[2%] sm:left-[-2%] sm:translate-x-0 sm:text-left"
+              className="glass-panel absolute -bottom-8 left-1/2 w-[13.5rem] -translate-x-1/2 rounded-2xl px-5 py-4 text-center sm:bottom-[-9%] sm:left-[-8%] sm:translate-x-0 sm:text-left"
               style={shift(18)}
             >
               <p className="text-[0.6rem] font-semibold uppercase tracking-[0.2em] text-primary">
@@ -184,7 +184,7 @@ export function Hero() {
           </div>
 
           {/* mobile: simplified benefit chips */}
-          <ul className="mt-14 flex flex-wrap justify-center gap-2 sm:hidden">
+          <ul className="mt-20 flex flex-wrap justify-center gap-2 sm:hidden">
             {BENEFITS.map((b) => (
               <li
                 key={b.label}
